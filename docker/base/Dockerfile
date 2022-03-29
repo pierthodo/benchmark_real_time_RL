@@ -81,14 +81,14 @@ p = os.path.join(os.path.dirname(mujoco_py.__file__), 'generated') \n\
 print(p) \n\
 os.chmod(p, 0o777) \n" | python
 
-RUN conda create -y -n benchmark python=3.7.10 
- && echo ". /app/miniconda/etc/profile.d/conda.sh" >> ~/.bashrc
- && echo "conda activate" >> ~/.bashrc
- && source /root/.bashrc
- && conda activate benchmark
- && pip install -U "ray[rllib]"
- && pip install torch==1.7.0
- && pip --no-cache-dir install wandb
+RUN conda create -y -n benchmark python=3.7.10 \
+ && echo ". /app/miniconda/etc/profile.d/conda.sh" >> ~/.bashrc \
+ && echo "conda activate" >> ~/.bashrc \
+ && source /root/.bashrc \
+ && conda activate benchmark \
+ && pip install -U "ray[rllib]" \
+ && pip install torch==1.7.0 \
+ && pip --no-cache-dir install wandb \
  && pip --no-cache-dir install matplotlib
 
 
