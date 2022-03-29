@@ -89,6 +89,10 @@ RUN conda create -y -n benchmark python=3.7.10 \
  && pip install -U "ray[rllib]" \
  && pip install torch==1.7.0 \
  && pip --no-cache-dir install wandb \
- && pip --no-cache-dir install matplotlib
+ && pip --no-cache-dir install matplotlib \ 
+ && git clone https://github.com/openai/gym \
+ && cd gym \
+ && git reset --hard $GYM_REV \
+ && pip --no-cache-dir install -e ."${GYM_FEATURES}"
 
 
