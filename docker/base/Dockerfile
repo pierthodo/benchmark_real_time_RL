@@ -81,8 +81,12 @@ p = os.path.join(os.path.dirname(mujoco_py.__file__), 'generated') \n\
 print(p) \n\
 os.chmod(p, 0o777) \n" | python
 
+RUN conda create -n mujoco python=3.7.10
+RUN conda activate mujoco
+
 RUN pip --no-cache-dir install matplotlib
 RUN pip --no-cache-dir install wandb
 RUN pip install mbrl
+RUN pip install -U "ray[rllib]"
 RUN pip install torch==1.7.0
 
