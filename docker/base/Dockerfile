@@ -81,8 +81,11 @@ p = os.path.join(os.path.dirname(mujoco_py.__file__), 'generated') \n\
 print(p) \n\
 os.chmod(p, 0o777) \n" | python
 
-RUN conda create -n mujoco python=3.7.10
-RUN conda init bash
+RUN conda create -n benchmark python=3.7.10
+
+RUN echo "source activate benchmark" > ~/.bashrc
+ENV PATH /opt/conda/envs/benchmark/bin:$PATH
+
 RUN conda activate mujoco
 
 RUN pip --no-cache-dir install matplotlib
