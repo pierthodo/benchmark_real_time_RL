@@ -95,4 +95,5 @@ RUN conda create -y -n benchmark python=3.7.10 \
  && git reset --hard $GYM_REV \
  && pip --no-cache-dir install -e ."${GYM_FEATURES}"
 
+ADD ./../../script /app/
 
