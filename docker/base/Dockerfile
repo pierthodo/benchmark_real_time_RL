@@ -82,6 +82,7 @@ print(p) \n\
 os.chmod(p, 0o777) \n" | python
 
 RUN conda create -n mujoco python=3.7.10
+RUN conda init bash
 RUN conda activate mujoco
 
 RUN pip --no-cache-dir install matplotlib
