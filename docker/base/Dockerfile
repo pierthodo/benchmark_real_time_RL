@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libx11-6 \
     build-essential \
     screen \
+    nano \
+    zlib1g-dev \
     htop \
     tmux \
  && apt-get clean \
