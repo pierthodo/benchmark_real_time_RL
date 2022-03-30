@@ -24,7 +24,7 @@ WORKDIR /app
 
 RUN wget -O miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-4.5.11-Linux-x86_64.sh \
   && bash miniconda.sh -b -p miniconda \
-  && rm miniconda.sh
+  && rm miniconda.sh \
   && conda install python=3.7.10
 
 ENV PATH=/app/miniconda/bin:$PATH
