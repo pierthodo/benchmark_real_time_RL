@@ -1,7 +1,10 @@
 #!/bin/bash
 
-for i in {0..9}
+for env in Hopper-v1 Pendulum-v1 Humanoid-v1 HalfCheetah-v1
 do
-  rllib train --run PPO --env Hopper-v2 --config '{"framework": "torch"}' --checkpoint-freq 25 &
+  for algo in PPO SAC ARS
+  do
+    rllib train --run $algo --env $env --config '{"framework": "torch"}' --checkpoint-freq 25 &
+  done
 done
 wait 
