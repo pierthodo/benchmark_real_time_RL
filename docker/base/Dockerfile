@@ -11,13 +11,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     screen \
     htop \
-    nano \
     tmux \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
 
+
 WORKDIR /app
+
+RUN apt-get install libssl-dev openssl \
+    && wget https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tgz \
+    && tar xzvf Python-3.7.10.tgz \
+    && cd Python-3.5.0 \
+    && ./configure \
+    && make \
+    && make install
 
 RUN wget -O miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-4.5.11-Linux-x86_64.sh \
   && bash miniconda.sh -b -p miniconda \
@@ -27,6 +35,7 @@ ENV PATH=/app/miniconda/bin:$PATH
 
 RUN pip install --no-cache-dir --upgrade pip
 
+RUN pip install --no-cache-dir torch==1.4.0 torchvision==0.5.0
 RUN apt-get update -q \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     curl \
@@ -69,6 +78,10 @@ ENV MUJOCO_PY_MUJOCO_PATH /app/.mujoco/mujoco200
 ARG GYM_REV=c33cfd8b2cc8cac6c346bc2182cd568ef33b8821
 
 ARG GYM_FEATURES='[mujoco]'
+RUN git clone https://github.com/openai/gym \
+ && cd gym \
+ && git reset --hard $GYM_REV \
+ && pip --no-cache-dir install -e ."${GYM_FEATURES}"
 
 # we need to change the permissions of mujoco_py/generated because mujoco-py will fail if it can't modifiy this directory
 RUN printf "\
@@ -78,20 +91,7 @@ p = os.path.join(os.path.dirname(mujoco_py.__file__), 'generated') \n\
 print(p) \n\
 os.chmod(p, 0o777) \n" | python
 
-RUN conda create -y -n benchmark python=3.7.10 \
- && echo ". /app/miniconda/etc/profile.d/conda.sh" >> ~/.bashrc \
- && echo "conda activate" >> ~/.bashrc \
- && . /root/.bashrc \
- && conda activate benchmark \
- && pip install -U "ray[rllib]" \
- && pip install torch==1.7.0 \
- && pip --no-cache-dir install wandb \
- && pip --no-cache-dir install matplotlib \ 
- && git clone https://github.com/openai/gym \
- && cd gym \
- && git reset --hard $GYM_REV \
- && pip --no-cache-dir install -e ."${GYM_FEATURES}" \
- && printf "try: import mujoco_py, os \n except: exit() \n p = os.path.join(os.path.dirname(mujoco_py.__file__), 'generated') \n  print(p) \n os.chmod(p, 0o777) \n" | python
-
-ADD ./../../script /app/
-
+RUN pip --no-cache-dir install matplotlib
+RUN pip --no-cache-dir install wandb
+RUN pip install torch==1.7.0
+RUN pip install -U "ray[rllib]"
