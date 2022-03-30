@@ -89,12 +89,7 @@ RUN conda create -y -n benchmark python=3.7.10 \
  && cd gym \
  && git reset --hard $GYM_REV \
  && pip --no-cache-dir install -e ."${GYM_FEATURES}" \
- && printf "\
-    try: import mujoco_py, os \n\
-    except: exit() \n\
-    p = os.path.join(os.path.dirname(mujoco_py.__file__), 'generated') \n\
-    print(p) \n\
-    os.chmod(p, 0o777) \n" | python
+ && printf "try: import mujoco_py, os \n except: exit() \n p = os.path.join(os.path.dirname(mujoco_py.__file__), 'generated') \n  print(p) \n os.chmod(p, 0o777) \n" | python
 
 ADD ./../../script /app/
 
