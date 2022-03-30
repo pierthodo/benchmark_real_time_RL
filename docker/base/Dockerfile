@@ -19,8 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-RUN apt-get install libssl-dev openssl \
-    && wget https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tgz \
+RUN wget https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tgz \
     && tar xzvf Python-3.7.10.tgz \
     && cd Python-3.5.0 \
     && ./configure \
