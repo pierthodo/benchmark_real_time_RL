@@ -21,16 +21,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-RUN wget https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tgz \
-    && tar xzvf Python-3.7.10.tgz \
-    && cd Python-3.7.10 \
-    && ./configure \
-    && make \
-    && make install
 
 RUN wget -O miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-4.5.11-Linux-x86_64.sh \
   && bash miniconda.sh -b -p miniconda \
   && rm miniconda.sh
+  && conda install python=3.7.10
 
 ENV PATH=/app/miniconda/bin:$PATH
 
