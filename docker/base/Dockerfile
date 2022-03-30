@@ -21,7 +21,7 @@ WORKDIR /app
 
 RUN wget https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tgz \
     && tar xzvf Python-3.7.10.tgz \
-    && cd Python-3.5.0 \
+    && cd Python-3.7.10 \
     && ./configure \
     && make \
     && make install
