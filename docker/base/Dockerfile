@@ -91,6 +91,5 @@ os.chmod(p, 0o777) \n" | python
 
 RUN pip --no-cache-dir install matplotlib
 RUN pip --no-cache-dir install wandb
-RUN pip install torch==1.7.0
 RUN pip install -U "ray[rllib]"
 
