@@ -1,4 +1,4 @@
-FROM nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
+FROM nvidia/cuda:10.0-cudnn7-runtime-ubuntu16.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
@@ -33,7 +33,6 @@ RUN conda install python=3.7.10
 
 RUN pip install --no-cache-dir --upgrade pip
 
-RUN pip install --no-cache-dir torch==1.4.0 torchvision==0.5.0
 RUN apt-get update -q \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     curl \
