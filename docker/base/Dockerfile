@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-cudnn7-runtime-ubuntu16.04
+FROM nvidia/cuda:11.0-cudnn7-runtime-ubuntu16.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
