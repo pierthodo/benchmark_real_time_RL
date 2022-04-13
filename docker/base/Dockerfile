@@ -93,5 +93,8 @@ RUN pip --no-cache-dir install wandb
 RUN pip install --no-cache-dir torch==1.7.0
 RUN pip install -U "ray[rllib]"
 RUN pip install dm_control
+RUN git clone https://github.com/openai/spinningup.git \
+  && cd spinningup \
+  && pip install -e .
 # RUN pip install tensorflow==2.4.2 tensorflow_probability==0.12.2 ruamel.yaml 
 
