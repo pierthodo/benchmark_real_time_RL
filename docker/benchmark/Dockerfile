@@ -1,7 +1,7 @@
 ARG BASE
 FROM ${BASE}
 
-RUN pip install -U ray[rllib] \
+RUN pip install -U -y ray[rllib] \
   && git clone https://github.com/pierthodo/ray.git \
   && cd /app/ray \
   && git remote add upstream https://github.com/ray-project/ray.git \
