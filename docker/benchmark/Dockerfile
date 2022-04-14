@@ -22,7 +22,7 @@ RUN git clone https://github.com/pierthodo/spinningup.git \
 
 RUN git clone https://github.com/pierthodo/ray.gitt \
   && cd /app/spinningup \
-  && pip install -e .
+  && pip install -e .[rllib]
 
 
 RUN pip install --upgrade numpy
