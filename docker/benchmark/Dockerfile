@@ -5,11 +5,6 @@ RUN git clone https://github.com/pierthodo/mbrl-lib.git \
   && cd /app/mbrl-lib \
   && pip install -e ".[dev]"
 
-RUN pip install -U ray[rllib] \
-  && git clone https://github.com/pierthodo/ray.git \
-  && cd /app/ray \
-  && git remote add upstream https://github.com/ray-project/ray.git \
-  && python python/ray/setup-dev.py -y
 
 
 RUN git clone https://github.com/pierthodo/rtrl.git \
