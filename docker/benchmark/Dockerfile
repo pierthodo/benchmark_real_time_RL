@@ -1,7 +1,7 @@
 ARG BASE
 FROM ${BASE}
 
-RUN pip install -U https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-2.0.0.dev0-cp38-cp38-manylinux2014_x86_64.whl \
+RUN pip install -U ray[rllib] \
   && git clone https://github.com/pierthodo/ray.git \
   && cd /app/ray \
   && git remote add upstream https://github.com/ray-project/ray.git \
