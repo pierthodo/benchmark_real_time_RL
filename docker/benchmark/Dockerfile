@@ -20,7 +20,7 @@ RUN git clone https://github.com/pierthodo/spinningup.git \
   && pip install -e .
 # RUN pip install tensorflow==2.4.2 tensorflow_probability==0.12.2 ruamel.yaml 
 
-RUN git clone https://github.com/pierthodo/ray.gitt \
+RUN git clone https://github.com/pierthodo/ray.git \
   && cd /app/ray \
   && pip install -e .[rllib]
 
