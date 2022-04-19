@@ -12,11 +12,6 @@ RUN git clone https://github.com/pierthodo/rtrl.git \
   && pip --no-cache-dir install -e .
 
 
-
-RUN git clone https://github.com/danijar/dreamerv2.git \
-  && cd /app/dreamerv2 \
-  && pip install -e .
-
 RUN git clone https://github.com/pierthodo/spinningup.git \
   && cd /app/spinningup \
   && pip install -e .
