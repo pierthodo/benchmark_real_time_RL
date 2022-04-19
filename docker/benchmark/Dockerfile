@@ -22,6 +22,11 @@ RUN git clone https://github.com/pierthodo/spinningup.git \
   && pip install -e .
 # RUN pip install tensorflow==2.4.2 tensorflow_probability==0.12.2 ruamel.yaml 
 
+RUN git clone https://github.com/astooke/rlpyt.git \
+  && git clone https://github.com/juliusfrost/dreamer-pytorch.git \
+  && mv /app/rlpyt/rlpyt /app/dreamer-pytorch/ \
+  && pip install pyprind
+
 RUN git clone https://github.com/JoLi0608/RTDM.git
 
 RUN pip install --upgrade numpy
