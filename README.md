@@ -1,4 +1,4 @@
-# docker_repo
+# Benchmark real-time reinforcement learning
 
 This is a repository containing the docker file used to train and evaluate the algorithms for the real-time continuous control benchmark. 
 
