@@ -2,6 +2,8 @@
 
 This is a repository containing the docker file used to train and evaluate the algorithms for the real-time continuous control benchmark. 
 
+The docker container can simulate embedded device by restricting access to cpu cycle following https://docs.docker.com/config/containers/resource_constraints/
+
 The command line used to train the algorithm from the respecting libraries. 
 
 ## SAC PPO 
