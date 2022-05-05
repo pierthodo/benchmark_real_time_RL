@@ -1,6 +1,6 @@
 # Benchmark real-time reinforcement learning
 
-This is a repository containing the docker file used to train and evaluate the algorithms for the real-time continuous control benchmark. 
+This is a repository containing the dockerfile used to train and evaluate the algorithms for the real-time continuous control benchmark. 
 
 The docker container can simulate embedded device by restricting access to cpu cycle following https://docs.docker.com/config/containers/resource_constraints/
 
