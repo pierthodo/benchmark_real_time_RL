@@ -9,6 +9,7 @@ The command line used to train the algorithm from the respective libraries.
 ## SAC PPO 
 
 ```
+cd /app/spinningup
 python -m spinup.run ppo --env continuous_CartPole-v0 --data_dir /root/logdir/spinup/ppo --epochs 25 --seed 1 2 3 4 5
 python -m spinup.run sac --env continuous_CartPole-v0 --data_dir /root/logdir/spinup/continuous_CartPole-v0/sac --epochs 25 --seed 1 2 3 4 5
 ```
@@ -16,6 +17,7 @@ python -m spinup.run sac --env continuous_CartPole-v0 --data_dir /root/logdir/sp
 
 ## MBPO PETS PLANET
 ```
+cd /app/mbrl-lib
 python -m mbrl.examples.main algorithm=mbpo overrides=mbpo_halfcheetah seed=1 
 python -m mbrl.examples.main algorithm=pets overrides=pets_halfcheetah seed=1 
 python -m mbrl.examples.main algorithm=planet overrides=planet_cartpole_balance dynamics_model=planet
@@ -23,6 +25,7 @@ python -m mbrl.examples.main algorithm=planet overrides=planet_cartpole_balance 
 
 ## RTRL
 ```
+cd /app/rtrl
 python -m rtrl run-fs exp/HalfCheetah-v2-RTAC rtrl:RtacTraining Env.id=HalfCheetah-v2 Env.real_time=True seed=1
 ```
 
