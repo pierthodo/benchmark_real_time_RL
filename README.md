@@ -41,3 +41,8 @@ Used DockerFile from Dreamerv2 (due to compatibility problem with my docker) htt
 python3 dreamerv2/train.py --logdir ~/logdir/dmc_cartpole_balance/dreamerv2/1 --configs dmc_vision --task dmc_cartpole_balance
 ```
 
+## Evaluation (WORK IN PROGRESS)
+
+The script used to evaluate the performance can be found in scripts/evaluate.py
+
+The discretization time can be modified by changing the timestep in the xml files of the mujoco library directly. 
