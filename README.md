@@ -4,6 +4,16 @@ This is a repository containing the dockerfile used to train and evaluate the al
 
 The docker container can simulate embedded device by restricting access to cpu cycle following https://docs.docker.com/config/containers/resource_constraints/
 
+The dockerfile pulls a forked version of the repository containing the RL algorithms. The codebase used to train the algorithm were used from either well-tested repository or published by the authors themselves.
+
+ARS: \url{https://github.com/ray-project/ray}
+RTRL: \url{https://github.com/rmst/rtrl}
+SAC, PPO: \url{https://github.com/openai/spinningup}
+MBPO, PETS, PLANET: \url{https://github.com/facebookresearch/mbrl-lib/tree/main/mbrl}
+DREAMER: \url{https://github.com/danijar/dreamerv2}
+
+All the hyper-parameters used were the one recommended by the the libraries. The training performance can be visualized in a wandb dashboard \url{https://wandb.ai/pierthodo/RTDM_train}, the inference time \url{https://wandb.ai/pierthodo/RTDM_inference} and the robustness to real time \url{https://wandb.ai/pierthodo/RTDM_performance}. 
+
 The command line used to train the algorithm from the respective libraries. 
 
 ## SAC PPO 
