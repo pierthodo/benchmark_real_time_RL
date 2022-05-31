@@ -6,10 +6,14 @@ The docker container can simulate embedded device by restricting access to cpu c
 
 The dockerfile pulls a forked version of the repository containing the RL algorithms. The codebase used to train the algorithm were used from either well-tested repository or published by the authors themselves.
 
-ARS: https://github.com/ray-project/ray \n
+ARS: https://github.com/ray-project/ray 
+
 RTRL: https://github.com/rmst/rtrl
+
 SAC, PPO: https://github.com/openai/spinningup
+
 MBPO, PETS, PLANET: https://github.com/facebookresearch/mbrl-lib/tree/main/mbrl
+
 DREAMER: https://github.com/danijar/dreamerv2
 
 All the hyper-parameters used were the one recommended by the the libraries. The training performance can be visualized in a wandb dashboard https://wandb.ai/pierthodo/RTDM_train, the inference time https://wandb.ai/pierthodo/RTDM_inference and the robustness to real time https://wandb.ai/pierthodo/RTDM_performance. 
