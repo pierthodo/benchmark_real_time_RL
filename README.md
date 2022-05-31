@@ -6,7 +6,7 @@ The docker container can simulate embedded device by restricting access to cpu c
 
 The dockerfile pulls a forked version of the repository containing the RL algorithms. The codebase used to train the algorithm were used from either well-tested repository or published by the authors themselves.
 
-ARS: https://github.com/ray-project/ray \\
+ARS: https://github.com/ray-project/ray \n
 RTRL: https://github.com/rmst/rtrl
 SAC, PPO: https://github.com/openai/spinningup
 MBPO, PETS, PLANET: https://github.com/facebookresearch/mbrl-lib/tree/main/mbrl
